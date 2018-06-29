@@ -1,0 +1,33 @@
+<br><br><br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header bg-primary text-light">Add Item</div>
+                <div class="card-body">
+                    <form class="mx-4">
+                        <div class="form-group row">
+                            <label for="MyItem" class="col-2 col-form-label">Item: </label>
+                            <input type="text" class="form-control col" id="MyItem" name="item" placeholder="Enter Item Name" [(ngModel)]="goalText">
+                        </div>
+                        <button type="submit" class="btn btn-primary pull-right" (click)="addItem()">Add Item</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header bg-primary text-light">My To-Do List ({{count}})</div>
+                <div class="card-body">
+                    <ul class="list-group" [@itemc]="items.length">
+                        <li class="list-group-item" *ngFor=" let item of items; let i = index">{{ item }}<span class="fa fa-close pull-right" (click)="removeItem(i)"></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+
+</div>
